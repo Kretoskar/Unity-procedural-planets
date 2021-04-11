@@ -20,7 +20,10 @@ public class MeshDrawer : MonoBehaviour
         _mesh.Clear();
         _mesh.vertices = _meshData.Vertices().ToArray();
         _mesh.triangles = _meshData.Triangles().ToArray();
-
+        
+        _mesh.RecalculateBounds();
+        _mesh.RecalculateNormals();
+        
         TimeSpan timePassed = DateTime.UtcNow - startTime;
         
         print("Generating took " + timePassed + "s");
