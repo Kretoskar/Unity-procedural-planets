@@ -7,13 +7,14 @@ using UnityEngine;
 public class MeshDrawer : MonoBehaviour
 {
     [SerializeField] private MeshData _meshData = null;
-
+    [SerializeField] private NoiseSettings _noiseSettings = null;
+    
     private Mesh _mesh;
     private NoiseFilter _noiseFilter;
 
     private void Start()
     {
-        _noiseFilter = new NoiseFilter();
+        _noiseFilter = new NoiseFilter(_noiseSettings);
         
         DateTime startTime = DateTime.UtcNow;
 

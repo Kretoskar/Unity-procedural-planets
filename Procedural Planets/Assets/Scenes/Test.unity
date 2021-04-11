@@ -435,3 +435,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meshData: {fileID: 1209760515}
+  _noiseSettings: {fileID: 11400000, guid: d8ff7c898c6fa344c929923e20141eb3, type: 2}
