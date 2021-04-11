@@ -9,23 +9,37 @@ public class MeshDrawer : MonoBehaviour
     [SerializeField] private MeshData _meshData = null;
 
     private Mesh _mesh;
+    private NoiseFilter _noiseFilter;
 
     private void Start()
     {
+        _noiseFilter = new NoiseFilter();
+        
         DateTime startTime = DateTime.UtcNow;
 
         _mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = _mesh;
         
         _mesh.Clear();
-        _mesh.vertices = _meshData.Vertices().ToArray();
-        _mesh.triangles = _meshData.Triangles().ToArray();
+
+        List<Vector3> vertices = _meshData.Vertices();
+        int[] triangles = _meshData.Triangles().ToArray();
+        
+        
+        List<Vector3> verticesAfterElevation = new List<Vector3>();
+        
+        foreach (Vector3 v in vertices)
+        {
+            float elevation = _noiseFilter.Evaluate(v);
+            verticesAfterElevation.Add(v * (1 + elevation));
+        }
+        
+        _mesh.vertices = verticesAfterElevation.ToArray();
+        _mesh.triangles = triangles;
         
         _mesh.RecalculateBounds();
         _mesh.RecalculateNormals();
         
         TimeSpan timePassed = DateTime.UtcNow - startTime;
-        
-        print("Generating took " + timePassed + "s");
     }
 }
