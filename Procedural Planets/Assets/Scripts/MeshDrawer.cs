@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,11 +12,17 @@ public class MeshDrawer : MonoBehaviour
 
     private void Start()
     {
+        DateTime startTime = DateTime.UtcNow;
+
         _mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = _mesh;
         
         _mesh.Clear();
         _mesh.vertices = _meshData.Vertices().ToArray();
         _mesh.triangles = _meshData.Triangles().ToArray();
+
+        TimeSpan timePassed = DateTime.UtcNow - startTime;
+        
+        print("Generating took " + timePassed + "s");
     }
 }

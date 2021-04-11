@@ -9,7 +9,7 @@ public class Icosahedron : MeshData
 
     public override List<int> Triangles() => GetTriangles();
 
-    private List<Vector3> GetVertices()
+    public static List<Vector3> GetVertices()
     {
         List<Vector3> vertices = new List<Vector3>();
         
@@ -33,7 +33,7 @@ public class Icosahedron : MeshData
         return vertices;
     }
 
-    private List<int> GetTriangles()
+    public static List<int> GetTriangles()
     {
         return new List<int>()
         {

@@ -9,6 +9,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Icosahedron.cs" t="Include" />
+          <e p="IcoSphere.cs" t="Include" />
           <e p="MeshData.cs" t="Include" />
           <e p="MeshDrawer.cs" t="Include" />
         </e>
