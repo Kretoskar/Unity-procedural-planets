@@ -8,7 +8,7 @@ public class MeshDrawer : MonoBehaviour
 {
     [SerializeField] private MeshData _meshData = null;
     [SerializeField] private List<NoiseSettings> _noiseSettings = null;
-
+    [SerializeField] private Gradient _gradient;
 
     public MinMax elevationMinMax;
 
@@ -18,7 +18,7 @@ public class MeshDrawer : MonoBehaviour
 
     private void Start()
     {
-        _colorGenerator = new ColorGenerator(GetComponent<Renderer>().material);
+        _colorGenerator = new ColorGenerator(GetComponent<MeshRenderer>(), _gradient);
         elevationMinMax = new MinMax();
 
         _noiseFilters = new List<NoiseFilter>();
@@ -72,8 +72,10 @@ public class MeshDrawer : MonoBehaviour
         _mesh.RecalculateBounds();
         _mesh.RecalculateNormals();
         
-        _colorGenerator.UpdateElevation(elevationMinMax);
         
+        _colorGenerator.UpdateElevation(elevationMinMax);
+        _colorGenerator.UpdateColors();
+
         TimeSpan timePassed = DateTime.UtcNow - startTime;
     }
 }

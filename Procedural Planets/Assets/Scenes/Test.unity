@@ -346,6 +346,35 @@ MonoBehaviour:
   _noiseSettings:
   - {fileID: 11400000, guid: d8ff7c898c6fa344c929923e20141eb3, type: 2}
   - {fileID: 11400000, guid: 7c7f68ab443750e47aefb3cec6cd0232, type: 2}
+  _gradient:
+    serializedVersion: 2
+    key0: {r: 0, g: 0.83679795, b: 1, a: 1}
+    key1: {r: 1, g: 0.86989117, b: 0, a: 1}
+    key2: {r: 0, g: 1, b: 0.19270587, a: 1}
+    key3: {r: 0.019357419, g: 0.8207547, b: 0.15848893, a: 0}
+    key4: {r: 0.6886792, g: 0.49694458, b: 0.0032484946, a: 0}
+    key5: {r: 1, g: 1, b: 1, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 2506
+    ctime2: 6939
+    ctime3: 10409
+    ctime4: 20046
+    ctime5: 42598
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 28913
+    atime2: 65535
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 6
+    m_NumAlphaKeys: 3
 --- !u!1 &1440474608
 GameObject:
   m_ObjectHideFlags: 0
