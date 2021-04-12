@@ -7,14 +7,18 @@ using UnityEngine;
 public class MeshDrawer : MonoBehaviour
 {
     [SerializeField] private MeshData _meshData = null;
-    [SerializeField] private NoiseSettings _noiseSettings = null;
+    [SerializeField] private List<NoiseSettings> _noiseSettings = null;
     
     private Mesh _mesh;
-    private NoiseFilter _noiseFilter;
+    private List<NoiseFilter> _noiseFilters;
 
     private void Start()
     {
-        _noiseFilter = new NoiseFilter(_noiseSettings);
+        _noiseFilters = new List<NoiseFilter>();
+        foreach (var setting in _noiseSettings)
+        {
+            _noiseFilters.Add(new NoiseFilter(setting));
+        }
         
         DateTime startTime = DateTime.UtcNow;
 
@@ -31,7 +35,11 @@ public class MeshDrawer : MonoBehaviour
         
         foreach (Vector3 v in vertices)
         {
-            float elevation = _noiseFilter.Evaluate(v);
+            float elevation = 0;
+            foreach (var noiseFilter in _noiseFilters)
+            {
+                elevation += noiseFilter.Evaluate(v);
+            }
             verticesAfterElevation.Add(v * (1 + elevation));
         }
         
