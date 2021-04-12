@@ -16,6 +16,6 @@ MonoBehaviour:
   _baseRoughness: 0.5
   _strength: 0.12
   _center: {x: 3, y: 1, z: 2}
-  _layersCount: 5
-  _persistence: 0.5
-  _minValue: 1
+  _layersCount: 7
+  _persistence: 0.428
+  _minValue: 0.96
