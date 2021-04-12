@@ -12,6 +12,9 @@
           <e p="IcoSphere.cs" t="Include" />
           <e p="MeshData.cs" t="Include" />
           <e p="MeshDrawer.cs" t="Include" />
+          <e p="Noise.cs" t="Include" />
+          <e p="NoiseFilter.cs" t="Include" />
+          <e p="NoiseSettings.cs" t="Include" />
         </e>
         <e p="URP" t="Include">
           <e p="Scripts" t="Include">
