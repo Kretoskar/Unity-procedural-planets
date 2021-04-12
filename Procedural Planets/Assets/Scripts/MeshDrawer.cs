@@ -32,14 +32,28 @@ public class MeshDrawer : MonoBehaviour
         
         
         List<Vector3> verticesAfterElevation = new List<Vector3>();
+
+        float firstLayerValue = 0;
+        
         
         foreach (Vector3 v in vertices)
         {
             float elevation = 0;
-            foreach (var noiseFilter in _noiseFilters)
+            
+            if (_noiseFilters.Count > 0)
             {
-                elevation += noiseFilter.Evaluate(v);
+                firstLayerValue = _noiseFilters[0].Evaluate(v);
             }
+
+            elevation = firstLayerValue;
+
+            for (var i = 1; i < _noiseFilters.Count; i++)
+            {
+                var noiseFilter = _noiseFilters[i];
+                float mask = firstLayerValue;
+                elevation += noiseFilter.Evaluate(v) * mask;
+            }
+
             verticesAfterElevation.Add(v * (1 + elevation));
         }
         
