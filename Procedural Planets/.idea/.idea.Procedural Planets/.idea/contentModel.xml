@@ -8,10 +8,12 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="ColorGenerator.cs" t="Include" />
           <e p="Icosahedron.cs" t="Include" />
           <e p="IcoSphere.cs" t="Include" />
           <e p="MeshData.cs" t="Include" />
           <e p="MeshDrawer.cs" t="Include" />
+          <e p="MinMax.cs" t="Include" />
           <e p="Noise.cs" t="Include" />
           <e p="NoiseFilter.cs" t="Include" />
           <e p="NoiseSettings.cs" t="Include" />
