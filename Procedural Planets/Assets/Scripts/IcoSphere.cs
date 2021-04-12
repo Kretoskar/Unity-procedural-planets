@@ -11,9 +11,14 @@ public class IcoSphere : MeshData
     private List<Vector3> _vertices;
     private List<int> _triangles;
     private Dictionary<Int64, int> _middlePointIndexCache;
+
+    private bool _verticesCalculated = false;
+    private bool _trianglesCalculated = false;
     
     public override List<Vector3> Vertices()
     {
+        if (_verticesCalculated) return _vertices;
+        
         _middlePointIndexCache = new Dictionary<long, int>();
         _vertices = new List<Vector3>();
         
@@ -25,7 +30,8 @@ public class IcoSphere : MeshData
         _triangles = Icosahedron.GetTriangles();
 
         RefineTriangles();
-        
+
+        _verticesCalculated = true;
         return _vertices;
     }
 

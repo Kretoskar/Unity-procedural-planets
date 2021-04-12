@@ -16,33 +16,40 @@ public class MeshDrawer : MonoBehaviour
     private Mesh _mesh;
     private List<NoiseFilter> _noiseFilters;
 
-    private void Start()
+    public void Generate()
     {
-        _colorGenerator = new ColorGenerator(GetComponent<MeshRenderer>(), _gradient);
-        elevationMinMax = new MinMax();
+        SetupNoiseFilters();
+        CalculateVertices();
+        CalculateTriangles();
+        
+        _mesh.RecalculateBounds();
+        _mesh.RecalculateNormals();
 
+        UpdateColors();
+    }
+
+    private void SetupNoiseFilters()
+    {
         _noiseFilters = new List<NoiseFilter>();
         foreach (var setting in _noiseSettings)
         {
             _noiseFilters.Add(new NoiseFilter(setting));
         }
-        
-        DateTime startTime = DateTime.UtcNow;
-
+    }
+    
+    private void CalculateVertices()
+    {
         _mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = _mesh;
-        
         _mesh.Clear();
-
-        List<Vector3> vertices = _meshData.Vertices();
-        int[] triangles = _meshData.Triangles().ToArray();
         
+        List<Vector3> vertices = _meshData.Vertices();
+        
+        elevationMinMax = new MinMax();
         
         List<Vector3> verticesAfterElevation = new List<Vector3>();
-
         float firstLayerValue = 0;
-        
-        
+
         foreach (Vector3 v in vertices)
         {
             float elevation = 0;
@@ -65,17 +72,20 @@ public class MeshDrawer : MonoBehaviour
             elevationMinMax.AddValue(elevation);
             verticesAfterElevation.Add(v * elevation);
         }
-        
+
         _mesh.vertices = verticesAfterElevation.ToArray();
+    }
+
+    private void CalculateTriangles()
+    {
+        int[] triangles = _meshData.Triangles().ToArray();
         _mesh.triangles = triangles;
-        
-        _mesh.RecalculateBounds();
-        _mesh.RecalculateNormals();
-        
-        
+    }
+
+    private void UpdateColors()
+    {
+        _colorGenerator = new ColorGenerator(GetComponent<MeshRenderer>(), _gradient);
         _colorGenerator.UpdateElevation(elevationMinMax);
         _colorGenerator.UpdateColors();
-
-        TimeSpan timePassed = DateTime.UtcNow - startTime;
     }
 }
