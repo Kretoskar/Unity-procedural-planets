@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe50f1fa19541340af6315304ec45d9, type: 3}
   m_Name: Mountains
   m_EditorClassIdentifier: 
-  _roughness: 3.27
-  _baseRoughness: 1.34
-  _strength: 0.16
+  _roughness: 3.49
+  _baseRoughness: 2.6
+  _strength: 3.55
   _center: {x: 3, y: 1, z: 2}
-  _layersCount: 5
-  _persistence: 0.5
-  _minValue: 1.26
+  _layersCount: 7
+  _persistence: 0.455
+  _minValue: 0.96
