@@ -86,6 +86,6 @@ public class MeshDrawer : MonoBehaviour
     {
         _colorGenerator = new ColorGenerator(GetComponent<MeshRenderer>(), _gradient);
         _colorGenerator.UpdateElevation(elevationMinMax);
-        _colorGenerator.UpdateColors();
+        //_colorGenerator.UpdateColors();
     }
 }
