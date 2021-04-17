@@ -20,16 +20,32 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_1561588F:
+        m_Texture: {fileID: 2800000, guid: 5fc776378e87d8843a72f7234ce6133d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_9BCD56B9:
-        m_Texture: {fileID: 2800000, guid: 5e98de278b2ccc14f89b76b85596a3f3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5ed424ffeb250c748acc3d6393f8118b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_ACA4CED8:
         m_Texture: {fileID: 2800000, guid: 0b81b0ea5fd254e439e7c610b1db1147, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - Texture2D_C9020FF9:
+        m_Texture: {fileID: 2800000, guid: 29c79d75ec1a7b44dac1bf226a223f20, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_CCFF8087:
+        m_Texture: {fileID: 2800000, guid: 5fc776378e87d8843a72f7234ce6133d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_ECE7E825:
         m_Texture: {fileID: 2800000, guid: 7b82d12aad56cc445b99fd1cf06a232d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_F1D1E961:
+        m_Texture: {fileID: 2800000, guid: 5fc776378e87d8843a72f7234ce6133d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -65,12 +81,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _waterTexture:
-        m_Texture: {fileID: 2800000, guid: ee7680f1374ab4449b6d5f6b2c2c1936, type: 3}
+        m_Texture: {fileID: 2800000, guid: 29c79d75ec1a7b44dac1bf226a223f20, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_3DE4F398: 1
+    - Vector1_3DE4F398: 0.7
+    - Vector1_9853EAD7: 10
     - Vector1_C7796CBF: 0.3
+    - Vector1_CCA6A92B: 25
     - Vector1_F5A8B1C5: 0.1
     - _AlphaClip: 0
     - _Blend: 0
