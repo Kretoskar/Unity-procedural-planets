@@ -24,6 +24,18 @@ Material:
         m_Texture: {fileID: 2800000, guid: 5fc776378e87d8843a72f7234ce6133d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - Texture2D_4069BD23:
+        m_Texture: {fileID: 2800000, guid: b96e8f9e488de7a429b7d81c068d2a1c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_62170806:
+        m_Texture: {fileID: 2800000, guid: 7140a9bc83a12ea49a081dda89216fff, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_81F0684B:
+        m_Texture: {fileID: 2800000, guid: 29c79d75ec1a7b44dac1bf226a223f20, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_9BCD56B9:
         m_Texture: {fileID: 2800000, guid: 5ed424ffeb250c748acc3d6393f8118b, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -81,12 +93,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _waterTexture:
-        m_Texture: {fileID: 2800000, guid: 29c79d75ec1a7b44dac1bf226a223f20, type: 3}
+        m_Texture: {fileID: 2800000, guid: 705019687b9a839448944f7df59ed464, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_3DE4F398: 0.7
-    - Vector1_9853EAD7: 10
+    - Vector1_3DE4F398: 0.8
+    - Vector1_954A9FFF: 0.05
+    - Vector1_9853EAD7: 1
     - Vector1_C7796CBF: 0.3
     - Vector1_CCA6A92B: 25
     - Vector1_F5A8B1C5: 0.1
